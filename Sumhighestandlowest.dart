@@ -12,7 +12,7 @@ int sumArray(List<int>? array) {
   int maxValue = array.reduce((a, b) => a > b ? a : b);
 
   // Sumar todos los elementos
-  int total = array.fold(0, (sum, val) => sum + val);
+  int total = array.fold(0, (sum, val) => sum + val); //sum + val indica que se añade el valor actual a la suma acumulada.
 
   // Restar min y max una vez cada uno y devolver resultado
   return total - minValue - maxValue;
