@@ -1,0 +1,4 @@
+int cats(int start, int finish) {
+  int dist = finish - start;
+  return dist ~/ 3 + dist % 3;
+}
