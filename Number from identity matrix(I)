@@ -1,0 +1,13 @@
+BigInt soln(int n) {
+  String res="";
+  for(int i=0;i<n;i++){
+    for(int j=0; j<n;j++){
+      if(i==j){
+        res+="1";
+      }else{
+        res+="0";
+      }
+    }
+  }
+  return BigInt.parse(res,radix:2);
+}
