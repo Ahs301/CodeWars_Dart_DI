@@ -1,0 +1,20 @@
+bool divingMinigame(List<int> lst) {
+  bool vive = true;
+  int breath = 10;
+
+  for (int h in lst) {
+    if (h < 0) {
+      breath -= 2;
+    } else {
+      breath += 4;
+      if (breath > 10) breath = 10;
+    }
+
+    if (breath <= 0) {
+      vive = false;
+      break;
+    }
+  }
+
+  return vive;
+}
