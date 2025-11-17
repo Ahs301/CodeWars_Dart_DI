@@ -1,0 +1,26 @@
+List<int> burner(int c, int h, int o) {
+  // 1️⃣ Agua H2O primero
+  int water = h ~/ 2;          // limitado por H
+  if (water > o) water = o;    // y también por O
+
+  h -= water * 2;
+  o -= water * 1;
+
+  // 2️⃣ Luego CO2
+  int co2 = c;                 // limitado por C
+  int maxOforCO2 = o ~/ 2;     // oxígeno disponible
+
+  if (co2 > maxOforCO2) co2 = maxOforCO2;
+
+  c -= co2 * 1;
+  o -= co2 * 2;
+
+  // 3️⃣ Por último CH4
+  int methane = c;             // limitado por C que queda
+  int maxHforCH4 = h ~/ 4;     // hidrógeno disponible
+
+  if (methane > maxHforCH4) methane = maxHforCH4;
+
+  // devolvemos [agua, CO2, metano]
+  return [water, co2, methane];
+}
